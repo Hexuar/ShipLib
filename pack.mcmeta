@@ -1,0 +1,7 @@
+{
+    "pack": {
+        "description": [{"text":"A library mod for ship datapacks","color":"gold"},{"text":"\nBy Hexuar","color":"yellow"}],
+        "min_format": [107, 1],
+        "max_format": [107, 1]
+    }
+}
