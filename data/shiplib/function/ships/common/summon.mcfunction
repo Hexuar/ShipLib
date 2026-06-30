@@ -1,5 +1,6 @@
 tp @s ~ ~1 ~
 
+function #shiplib:ships/set_data
 function #shiplib:ships/summon
 tag @s remove shiplib.spawn
 
