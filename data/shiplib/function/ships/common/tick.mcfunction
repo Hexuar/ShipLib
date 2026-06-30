@@ -66,5 +66,10 @@ execute unless block ~ ~-1 ~ #shiplib:fallable if block ~ ~ ~ #shiplib:fallable 
 execute if block ~ ~ ~ #shiplib:fallable run scoreboard players set #assemble shiplib.value 1
 
 
+# Move Up
+execute if block ~ ~1 ~ minecraft:water run tp ~ ~1 ~
+execute if block ~ ~1 ~ minecraft:water run scoreboard players set #assemble shiplib.value 1
+
+
 # Remove tags
 tag @e[type=#shiplib:ship_entities,tag=shiplib.current] remove shiplib.current
