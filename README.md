@@ -1,5 +1,5 @@
 # ShipLib
-A library datapack providing the functionality for ships. Used by **Norse Adventure**.
+A library datapack providing functionality for ships. Used by **Norse Adventure**.
 
 ## Usage
 When creating a datapack utilising **ShipLib**, there are a couple of function tags you'll need to implement. These should all be added to `shiplib/tags/function/ships`. For more information, check out [**Norse Adventure**](https://github.com/Hexuar/Norse-Adventure/).
