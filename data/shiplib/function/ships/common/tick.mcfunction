@@ -43,7 +43,7 @@ function shiplib:ships/common/move with storage shiplib:data move
 
 
 # Fix rotation of entities
-#execute as @e[type=#shiplib:fix_rotation,tag=shiplib.current] run data modify entity @s Rotation set from entity @e[type=item_display,tag=shiplib.current,tag=shiplib.ship,sort=nearest,limit=1] Rotation
+execute as @e[type=#shiplib:fix_rotation,tag=shiplib.current] run data modify entity @s Rotation set from entity @e[type=item_display,tag=shiplib.current,tag=shiplib.ship,sort=nearest,limit=1] Rotation
 
 
 # Assemble
