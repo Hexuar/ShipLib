@@ -1,4 +1,4 @@
-execute as @e[type=item_display,tag=shiplib.ship] at @s run function shiplib:ships/common/destroy
+execute as @e[type=item_display,tag=shiplib.ship] at @s run function shiplib:ship/destroy
 
 kill @e[tag=shiplib.entity,tag=!shiplib.kill_me]
 

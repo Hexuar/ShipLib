@@ -1,8 +1,14 @@
 tp @s ~ ~1 ~
 
+tag @s add shiplib.entity
+tag @s add shiplib.ship
+tag @s add shiplib.unregistered
+data merge entity @s {teleport_duration:2,interpolation_duration:1}
+
 function #shiplib:ships/set_data
 function #shiplib:ships/summon
 tag @s remove shiplib.spawn
+tag @e remove shiplib.untagged
 
 data modify entity @s Rotation[0] set from entity @p[distance=..5] Rotation[0]
 

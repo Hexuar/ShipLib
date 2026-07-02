@@ -1,0 +1,1 @@
+summon area_effect_cloud ~ ~ ~ {Tags:["shiplib.entity","shiplib.ship_part","shiplib.ship_part.acceleration","shiplib.unregistered","shiplib.untagged"],Radius:0f,Age:999999,Passengers:[{id:"minecraft:interaction",width:0.6f,height:0.6f,Tags:["shiplib.entity","shiplib.ship_part","shiplib.ship_part.acceleration","shiplib.unregistered","shiplib.untagged"]}]}
