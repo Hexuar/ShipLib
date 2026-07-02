@@ -1,13 +1,13 @@
 ## Summon and position anchor points
 
 # Anchor point A
-function shiplib:ships/common/rope/summon_anchor_point
-execute as @e[type=bat,tag=shiplib.ship_part.rope.anchor_point,tag=shiplib.unassigned,sort=nearest,limit=1] run function shiplib:ships/common/rope/tag/a
+function shiplib:part/rope/summon_anchor_point
+execute as @e[type=bat,tag=shiplib.ship_part.rope.anchor_point,tag=shiplib.unassigned,sort=nearest,limit=1] run function shiplib:part/rope/tag/a
 
 
 # Anchor point B
-function shiplib:ships/common/rope/summon_anchor_point
-execute as @e[type=bat,tag=shiplib.ship_part.rope.anchor_point,tag=shiplib.unassigned,sort=nearest,limit=1] run function shiplib:ships/common/rope/tag/b
+function shiplib:part/rope/summon_anchor_point
+execute as @e[type=bat,tag=shiplib.ship_part.rope.anchor_point,tag=shiplib.unassigned,sort=nearest,limit=1] run function shiplib:part/rope/tag/b
 
 
 ## Add Leash
