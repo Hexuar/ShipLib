@@ -12,15 +12,15 @@ execute if score #destroy shiplib.value matches 1 unless entity @s[tag=shiplib.k
 execute as @e[type=area_effect_cloud,tag=shiplib.current,tag=shiplib.ship_part.seat,nbt=!{Passengers:[]}] at @s run function shiplib:part/seat/fix
 
 
-# Interaction
-execute if data entity @e[type=interaction,tag=shiplib.ship_part.steering,tag=shiplib.current,sort=nearest,limit=1] interaction if score @s shiplib.rotation < @s shiplib.max_rotation run scoreboard players operation @s shiplib.rotation += @s shiplib.rotation_increment
-execute if data entity @e[type=interaction,tag=shiplib.ship_part.steering,tag=shiplib.current,sort=nearest,limit=1] attack if score @s shiplib.rotation > @s shiplib.min_rotation run scoreboard players operation @s shiplib.rotation -= @s shiplib.rotation_increment
+# Input
+execute as @e[type=minecraft:pig,tag=shiplib.current,tag=shiplib.ship_part.steering_seat] on passengers run tag @s add shiplib.steering_player
 
-execute if data entity @e[type=interaction,tag=shiplib.ship_part.acceleration,tag=shiplib.current,sort=nearest,limit=1] attack if score @s shiplib.speed < @s shiplib.max_speed run scoreboard players operation @s shiplib.speed += @s shiplib.speed_increment
-execute if data entity @e[type=interaction,tag=shiplib.ship_part.acceleration,tag=shiplib.current,sort=nearest,limit=1] interaction if score @s shiplib.speed > @s shiplib.min_speed run scoreboard players operation @s shiplib.speed -= @s shiplib.speed_increment
+execute if score @p[tag=shiplib.steering_player] shiplib.input.forward.pressed matches 1 if score @s shiplib.speed < @s shiplib.max_speed run scoreboard players operation @s shiplib.speed += @s shiplib.speed_increment
+execute if score @p[tag=shiplib.steering_player] shiplib.input.backward.pressed matches 1 if score @s shiplib.speed > @s shiplib.min_speed run scoreboard players operation @s shiplib.speed -= @s shiplib.speed_increment
+execute if score @p[tag=shiplib.steering_player] shiplib.input.left.pressed matches 1 if score @s shiplib.rotation > @s shiplib.min_rotation run scoreboard players operation @s shiplib.rotation -= @s shiplib.rotation_increment
+execute if score @p[tag=shiplib.steering_player] shiplib.input.right.pressed matches 1 if score @s shiplib.rotation < @s shiplib.max_rotation run scoreboard players operation @s shiplib.rotation += @s shiplib.rotation_increment
 
-execute as @e[type=interaction,tag=shiplib.current,sort=nearest] run data remove entity @s interaction
-execute as @e[type=interaction,tag=shiplib.current,sort=nearest] run data remove entity @s attack
+tag @a remove shiplib.steering_player
 
 
 # Collisions
@@ -45,7 +45,7 @@ function shiplib:ship/move with storage shiplib:data move
 # Assemble
 execute unless score @s shiplib.speed matches 0 run scoreboard players set #assemble shiplib.value 1
 execute unless score @s shiplib.rotation matches 0 run scoreboard players set #assemble shiplib.value 1
-execute if entity @e[type=area_effect_cloud,tag=shiplib.ship_part.steering,distance=..1] run scoreboard players set #assemble shiplib.value 1
+execute if entity @e[type=area_effect_cloud,tag=shiplib.ship_part.steering_seat,distance=..1] run scoreboard players set #assemble shiplib.value 1
 execute if score #assemble shiplib.value matches 1 as @e[type=#shiplib:fix_rotation,tag=shiplib.current] run data modify entity @s Rotation set from entity @e[type=item_display,tag=shiplib.current,tag=shiplib.ship,sort=nearest,limit=1] Rotation
 execute if score #assemble shiplib.value matches 1 run function #shiplib:ships/assemble
 scoreboard players set #assemble shiplib.value 0

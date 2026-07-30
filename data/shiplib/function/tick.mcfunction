@@ -1,2 +1,4 @@
 execute as @e[type=item_display,tag=shiplib.ship] at @s if entity @p[distance=..10] run function shiplib:ship/tick
 execute as @e[type=item_display,tag=shiplib.spawn] at @s run function shiplib:ship/spawn
+
+execute as @a run function shiplib:input

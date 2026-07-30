@@ -8,6 +8,15 @@ scoreboard objectives add shiplib.max_rotation dummy
 scoreboard objectives add shiplib.min_rotation dummy
 scoreboard objectives add shiplib.rotation_increment dummy
 
+scoreboard objectives add shiplib.input.forward.pressed dummy
+scoreboard objectives add shiplib.input.forward.held dummy
+scoreboard objectives add shiplib.input.backward.pressed dummy
+scoreboard objectives add shiplib.input.backward.held dummy
+scoreboard objectives add shiplib.input.left.pressed dummy
+scoreboard objectives add shiplib.input.left.held dummy
+scoreboard objectives add shiplib.input.right.pressed dummy
+scoreboard objectives add shiplib.input.right.held dummy
+
 scoreboard objectives add shiplib.entityID dummy
 scoreboard players add #register shiplib.entityID 0
 
