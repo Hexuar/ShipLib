@@ -20,6 +20,8 @@ execute if score @p[tag=shiplib.steering_player] shiplib.input.backward.pressed 
 execute if score @p[tag=shiplib.steering_player] shiplib.input.left.pressed matches 1 if score @s shiplib.rotation > @s shiplib.min_rotation run scoreboard players operation @s shiplib.rotation -= @s shiplib.rotation_increment
 execute if score @p[tag=shiplib.steering_player] shiplib.input.right.pressed matches 1 if score @s shiplib.rotation < @s shiplib.max_rotation run scoreboard players operation @s shiplib.rotation += @s shiplib.rotation_increment
 
+execute if score #DISPLAY_STEERING_UI shiplib.value matches 1 run title @p[tag=shiplib.steering_player] actionbar [{"text":"Speed: ",color:"gray"},{"score":{name:"@s",objective:shiplib.speed},color:"gray"},{"text":"  Rotation: ",color:"gray"},{"score":{name:"@s",objective:"shiplib.rotation"},color:"gray"}]
+
 tag @a remove shiplib.steering_player
 
 

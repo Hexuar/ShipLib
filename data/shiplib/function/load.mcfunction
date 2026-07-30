@@ -20,5 +20,7 @@ scoreboard objectives add shiplib.input.right.held dummy
 scoreboard objectives add shiplib.entityID dummy
 scoreboard players add #register shiplib.entityID 0
 
+scoreboard players set #DISPLAY_STEERING_UI shiplib.value 1
+
 function #shiplib:ships/load_data
 execute as @e[type=item_display,tag=shiplib.ship] run function #shiplib:ships/set_data
