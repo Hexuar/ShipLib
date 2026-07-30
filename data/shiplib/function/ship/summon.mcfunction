@@ -23,6 +23,3 @@ scoreboard players set @s shiplib.speed 0
 # ID
 execute as @e[tag=shiplib.unregistered] run function shiplib:entity_id/register
 scoreboard players add #register shiplib.entityID 1
-
-# Assemble
-function #shiplib:ships/assemble

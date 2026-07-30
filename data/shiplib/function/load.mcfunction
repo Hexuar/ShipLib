@@ -7,6 +7,7 @@ scoreboard objectives add shiplib.speed_increment dummy
 scoreboard objectives add shiplib.max_rotation dummy
 scoreboard objectives add shiplib.min_rotation dummy
 scoreboard objectives add shiplib.rotation_increment dummy
+scoreboard objectives add shiplib.has_been_assembled dummy
 
 scoreboard objectives add shiplib.input.forward.pressed dummy
 scoreboard objectives add shiplib.input.forward.held dummy

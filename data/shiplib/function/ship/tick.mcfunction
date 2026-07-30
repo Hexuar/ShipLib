@@ -52,7 +52,8 @@ function shiplib:ship/move with storage shiplib:data move
 # Assemble
 execute unless score @s shiplib.speed matches 0 run scoreboard players set #assemble shiplib.value 1
 execute unless score @s shiplib.rotation matches 0 run scoreboard players set #assemble shiplib.value 1
-execute if entity @e[type=area_effect_cloud,tag=shiplib.ship_part.steering_seat,distance=..1] run scoreboard players set #assemble shiplib.value 1
+execute unless score @s shiplib.has_been_assembled matches 1 run scoreboard players set #assemble shiplib.value 1
+execute unless score @s shiplib.has_been_assembled matches 1 run scoreboard players set @s shiplib.has_been_assembled 1
 execute if score #assemble shiplib.value matches 1 as @e[type=#shiplib:fix_rotation,tag=shiplib.current] run data modify entity @s Rotation set from entity @e[type=item_display,tag=shiplib.current,tag=shiplib.ship,sort=nearest,limit=1] Rotation
 execute if score #assemble shiplib.value matches 1 run function #shiplib:ships/assemble
 scoreboard players set #assemble shiplib.value 0
