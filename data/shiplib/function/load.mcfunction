@@ -23,7 +23,5 @@ scoreboard players add #register shiplib.entityID 0
 
 scoreboard players set #2 shiplib.value 2
 
-scoreboard players set #DISPLAY_STEERING_UI shiplib.value 1
-
 function #shiplib:ships/load_data
 execute as @e[type=item_display,tag=shiplib.ship] run function #shiplib:ships/set_data
