@@ -65,6 +65,12 @@ execute if entity @s[tag=norse_adventure.ship.knarr] run loot spawn ~ ~ ~ loot n
 execute if entity @s[tag=norse_adventure.ship.skeid] run loot spawn ~ ~ ~ loot norse_adventure:ships/skeid
 ```
 
+### `display_steering_ui.json`
+Should contain the path to a functíon which displays the steering ui when seated in your ships. This function is passed the parameters `speed` and `rotation` which can be used to display the ships motion.
+```MCFUNCTION
+$title @p[tag=shiplib.steering_player] actionbar [{translate:"title.norse_adventure.steering_ui", with:["$(speed)","$(rotation)"], color:"gray"}]
+```
+
 ---
 
 ### `assemble.json`
